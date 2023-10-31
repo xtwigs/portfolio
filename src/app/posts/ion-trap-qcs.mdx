@@ -1,0 +1,538 @@
+---
+title: "Quantum Computing via Ion Trapping"
+subtitle: "Seminar Report for Advanced Topics of Quantum Computing"
+date: "2022.05.22"
+pdf: "/post/ion-trap-qcs.pdf"
+---
+
+# Introduction
+
+The mathematical framework for quantum computing has existed since the
+twentieth century, when it was developed by some of the most notable
+physicists of the time. However, the most noticeable stimulus for
+research in quantum computing occurred after both Paul Benioff
+introduced the quantum-mechanical based Turing Machine [@Benioff1980],
+and Richard Feynman consequently argued that these systems could be
+capable of simulating the intrinsic physical properties of nature
+[@Feynman1982], something classical systems could not achieve. From
+there, the field saw some noticeable advancements: Peter Shor's prime
+factorization algorithm [@doi:10.1137/S0097539795293172], Lov Grover's
+search problem solver [@Grover1996], and many more.
+
+Nevertheless, this all remains mainly theoretical research since no
+completely capable quantum computer (QC) has been built. A plethora of
+ideas have been introduced into how to actually build them, with some of
+the most prominent being the use of superconducting qubits
+[@Clarke2008][@kaminsky2004scalable] (currently the approach being used
+by Google [@Arute2019]), quantum dot-based computers
+[@PhysRevLett.83.4204] and, finally, the use of cold-trapped ion's
+internal state as the base for the quantum bits [@PhysRevLett.74.4091].
+With the last method, first introduced in 1995 by Cirac and Zoller,
+being one of the pioneering papers for the physical realization of a QC
+and will be the focus of discussion throughout this seminar report.
+
+Of course, the fact that so many ideas have been proposed, is nothing
+but evidence for how relatively young this field is. Anyhow, we are
+witnessing an increased investment both academically and industrially
+[@Gibney2019] which reflects the potential this technology has in
+solving key present day challenges. McKinsey and Company further state
+that use cases for quantum computing are starting to become realistic
+for companies in specialized fields
+[@biondi_heid_henke_mohr_pautasso_ostojic_wester_zemmel_2022], which
+illustrates that a \"quantum world\" might be closer than we think.
+
+# Background
+
+## Ions
+
+An ion is an atom or molecule where the electronic structure is not
+identically distributed between protons and electrons. Specifically, by
+gaining or losing an electron, the particle gains a net charge in a
+process called ionization.
+
+In particular, by shining a laser with sufficient energy on an atom, we
+can effectively force it to drop a specific number of electrons thus
+becoming an ion. This process is called ionization and the energy
+required for the process is known for a specific atom/number of
+electrons pair.
+
+## Ion traps
+
+First, we need to isolate the ion such that other particles do not
+interfere with the very delicate conditions for ion trapping. This is,
+naturally, done via vacuum chambers encasing the trapping device. Any
+interaction with the system is, therefore, accomplished with optical and
+electrical signals.
+
+Furthermore, we should consider that the Coulomb force
+[\[eq:coulomb\]](#eq:coulomb) is in effect here: particles with
+differently-signed charges will attract each other, while equally-signed
+particles will be mutually repelled [@noauthor_2017-et].
+
+$$F_1 = \frac{q_1q_2}{4\pi\epsilon_0}\frac{r_1-r_2}{\lvert r_1 - r_2\rvert^3}$$
+
+From there, one might hope that encasing the particle with positively
+charged electrodes (assuming a positively charged ion) will confine it
+indefinitely. However, due to Earnshaw's theorem
+[@cambridge1842transactions], we know it is impossible to contain a
+stationary particle in equilibrium resourcing only to the electrostatic
+interaction of charges.
+
+Therefore, for this particular problem, we should resource to a
+dynamical electrical field.
+
+### Traditional Paul traps
+
+In 1990, German physicist Wolfgang Paul, proposed a device with a
+similar arrangement [@RevModPhys.62.531], but that repeatedly alternates
+between electrical field configurations to, successfully, confine the
+ions.
+
+Suppose we continue to surround the particles with electrodes in all
+axes. A linear Paul trap fixes one axis with a positive voltage. This is
+done via two cone-shaped electrodes, named Endcap electrodes.
+Surrounding the particle in the other axes are rectangular-shaped
+electrodes named Blade electrodes. Each pair contains an opposite charge
+so that the ion is always attracted to two of the electrodes.
+
+In static conditions, this creates an electrical field with a saddle
+shape, where the particle is drawn to the negative charge. However, if
+we rotate the electric field with sufficient frequency, such that the
+rotation is faster than the attraction of the particle, we can
+effectively, and periodically, draw the particle to different blades
+such that it remains confined in a sphere of arbitrary radius.
+
+In practice, the rotation of the electrical field could be done by
+physically rotating the device, but it is much easier to apply
+differently signed voltages to each pair of blade electrodes in a
+oscillating fashion. Effectively rotating the electrical field with a
+certain frequency.
+
+Furthermore, given that a collection of ions also suffer from Coulomb's
+law, it is possible to engineer a trapping device that is able to
+confine them simultaneously [@RevModPhys.62.531].
+
+<figure id="fig:paul-trap">
+  <img
+    src="/images/The-canonical-four-rod-Paul-trap-has-been-a-workhorse-for-early-demonstrations-of-QIP.png"
+    style="width:100mm"
+  />
+  <figcaption>
+    a) The traditional linear Paul trap, composed of four blade electrodes and
+    two endcap electrodes confining a string of ions. A laser beam shines on an
+    ion illustrating the application of a single qubit gate. b) Photographs of
+    actual ions confined in a Paul trap. Adapted from{" "}
+    <span class="citation" data-cites="Eltony2016"></span>.
+  </figcaption>
+</figure>
+
+### Planar Paul traps
+
+It seems obvious to us, a generation with classical processors in the
+nanometer scale, that any device that requires scale and engineering
+precision would benefit from microfabrication processes. Of course, this
+applies to quantum processors as well. The description for transitioning
+from the traditional Paul trap to a microchip has been published since
+around 2006 [@PhysRevLett.96.253003], and the field has seen some
+remarkable advancements since then. Namely, in terms of modularity of
+the chip and the capability of moving ions around [@Blakestad2009].
+
+<figure id="fig:planar">
+  <img src="/images/planar.jpeg" style="width:100mm" />
+  <figcaption>
+    An example of an ion trap based on a semiconductor chip. The ions sitting
+    above it are a zoomed in picture of 80{" "}
+    <span class="math inline">
+      <sup>171</sup>
+    </span>
+    Yb
+    <span class="math inline">
+      <sup>+</sup>
+    </span>{" "}
+    ions glowing. Adapted from <span class="citation" data-cites="Monroe2019"></span>
+    .
+  </figcaption>
+</figure>
+
+However, some new challenges arise when this manufacturing scale is
+considered, especially regarding the addressing and heating of
+individual trapped ions [@Ivory2021].
+
+# How do we build a quantum computer?
+
+When we discuss what aspects are necessary to construct a Quantum
+Computer, we have to refer to DiVicenzo's criteria [@DiVincenzo2000]. He
+states that for any physical implementation to be successful, it must
+fulfill five (plus two) criteria:
+
+- Scalability with well-defined qubits
+
+- Initializing qubits to a simple fiducial state
+
+- Long relevant decoherence times
+
+- A \"universal\" set of quantum gates
+
+- A qubit specific measurement capability
+
+The last two criteria are: interconverting stationary and flying qubits
+and faithfully transmitting flying qubits between specified locations.
+However, these only apply when quantum communication is being considered
+and, since a physical implementation of QC is a landmark achievement by
+itself, those are not going to be discussed in this report.
+
+## Qubits
+
+Taking into account that atoms have naturally occurring vibrations that
+differ according to their energy level, it's only natural that we can
+leverage them to form the quantum states. Cirac and Zoller proposed
+using a particle's energy ground state as $\ket{0}$ and it's excited
+state as $\ket{1}$. Therefore, when we dwell upon the string of $N$ ions
+present in a ion trap at a particular time, we find a macroscopic
+superposition of possible states [eq:superposition]
+
+$$\ket{\Psi} = \sum_{x=0}^{2^N-1} c_x \ket{x}$$
+
+Each possible state is associated with a coefficient $c_x$ akin to the
+probability of the QC being in the specific state. Moreover, $x$
+corresponds to the binary decomposition of a particular number and,
+since each ion can be targeted with lasers, the preparation and readout
+of states can be done in a simple manner as we'll see in a further
+section.
+
+Furthermore, in this modality of quantum computers, we can either have
+optical or hyperfine qubits. They differ only in what is considered the
+excited state: for the optical qubit, $\ket{1}$ is a meta-stable excited
+state; whereas, in hyperfine qubits, $\ket{1}$ is the first excited
+level above the ground state.
+
+## Fiducial state
+
+In layman's terms, this means that the state of the QC must be known
+before computation begins, such that it's results are trustworthy.
+Keeping in mind that every state can be obtained starting from an
+initial, low energy, $\ket{0}$ state [@nielsen00]. This equates to the
+most common approach in initializing the quantum registers. From there,
+physicists prepare the desired state by applying a sequence of quantum
+gates as needed.
+
+Now, we should consider how to actually prepare the initial state. As
+discussed before, we regard $\ket{0}$ as the ground energy level in a
+particular atom. Moreover, the overall string of ions confined has to be
+set to it's lowest energy level, this ensures the computation results
+are trustworthy as it is the base for the Cirac-Zoller gate we will soon
+introduce.
+
+The ground state is achieved with extreme cooling procedures, namely,
+the one mentioned in the original article, sideband cooling
+[@PhysRevLett.62.403]. Essentially, when a laser is tuned specifically
+to the red sideband frequency of a particular atom, it inflicts a
+transition from a lower energy level to an excited state, simultaneously
+reducing the motional state of the atom by one discrete level. However,
+the energy absorbed is subsequently released in the form of a photon,
+resulting in the net effect of lowering its energy and motional level to
+the lowest possible discrete state with high probability if the
+procedure is repeated to a sufficient degree [@Schliesser2008].
+
+In other words, with this method it is possible to reliably prepare a
+complete $\ket{0}$ state, both in terms of the electronic state of every
+individual ion and the overall motional level of the oscillating system.
+
+## Decoherence time
+
+One of the main benefits in building quantum computers with ion-trapping
+technology is that the decoherence time of states is relatively high
+when compared to other solutions. With this method, decoherence between
+the expected state of a qubit and its actual state occurs due to the
+interaction of the ions with the surrounding environment, since
+collisions between atoms and interactions with naturally occurring
+electric fields are bound to happen. Furthermore, we should also mention
+the spontaneous emission of energy in excited particles, leading to the
+decay of a particle into a lower energy level.
+
+However, there are techniques, and evidence to support they work, that
+suppress most of these concerns. Regarding the storage of the delicate
+quantum information, by encasing the system in a vacuum chamber, we
+remove most of the possibilities for the system to interact with
+neighboring particles and electrical fields, thus preserving its
+intrinsic structure.
+
+On the other hand, spontaneous emission of energy is mainly a non-factor
+in some specific ions, since the excited state used for $\ket{1}$ is
+relatively stable and is able to stay intact for the lifetime of most
+computations [@Garg1996]. In particular, in 1997, for the $^{171}$Yb$^+$
+ion, coherence times of more than 10 minutes have been measured
+[@Fisk1997].
+
+## Quantum Gates
+
+Initially, we should start by addressing the fact that any gate can be
+constructed with single-qubit gates and an arbitrary 2-qubit gate
+[@Divincenzo_1994], thus forming a universal set of quantum gates.
+Therefore, a natural limitation in how to build a QC is how to achieve a
+working 2-qubit gate, something that requires \"communication\" between
+two particles.
+
+### Single qubit gates
+
+Consider the interpretation of single qubit gates as rotations on the
+block sphere. We know from the Z-Y decomposition that an arbitrary 2x2
+matrix can be decomposed into $R_z$ and $R_y$ rotations with specific
+real valued angles [@nielsen00]. Furthermore, since each ion is
+addressable with correctly tuned lasers, we'll discuss that any rotation
+can be performed and, therefore, the transition from a electronic ground
+state to each possible state is theoretically possible [@nielsen00].
+
+Specifically, the tuning of the lasers depends on the ion in question.
+For instance, the use of a resonant frequency should oscillate between
+the two electronic states being used as $\ket{0}$ and $\ket{1}$
+[@inproceedings]. Going even further, since an atom makes up for a two
+level system and, when subject to an oscillatory driving field such as a
+laser, it oscillates between its states according to a specific innate
+frequency called the Rabi frequency [@Band2013].
+
+<figure id="fig:oscillation of states">
+  <img
+    src="/images/Carrier-Rabi-oscillations-of-a-single-4-0-Ca-Each-data-point-represents-the-average.ppm.png"
+    style="width:55mm"
+  />
+  <figcaption>
+    Carrier Rabi Oscillations of a{" "}
+    <span class="math inline">
+      <sup>40</sup>
+    </span>
+    Ca
+    <span class="math inline">
+      <sup>+</sup>
+    </span>{" "}
+    ion. Each sample is the average measurement after 1000 experiments, given a
+    specific amount of time where the ion was subjected to a laser. Adapted from{" "}
+    <span class="citation" data-cites="inproceedings"></span>.
+  </figcaption>
+</figure>
+
+On the other hand, tuning the pulse length and phase results in a
+rotation of arbitrary accuracy [@inproceedings], as described in
+[\[eq:rotation\]](#eq:rotation){reference-type="eqref"
+reference="eq:rotation"}. Making it that a rotation on the Bloch sphere
+is akin to subjecting a ion to a particular laser configuration.
+
+$$R(\theta, \phi) = \exp(i\theta/2(e^{i\phi}\sigma_+ + e^{-i\phi}\sigma_-))$$
+
+Interpreting figure [4](#fig:change of phase){reference-type="ref"
+reference="fig:change of phase"}: in a), a pulse of length $\pi$ and $0$
+relative phase to the Rabi frequency shines upon the atom, this equates
+to a rotation around the x-axis on the Bloch sphere according to the
+right-hand rule; when the phase is switched by $\pi/2$, we can interpret
+this as a rotation around the y axis; therefore, when projecting on the
+z axis for measurement, the switching of phase has no visible effect.
+
+Regarding b), something very similar occurs, but the switching of phase
+happens when the atom is in a superposition state. Specifically, the
+atom is positioned at the intersection of the y-axis and the Bloch
+sphere, therefore, a rotation around y does nothing. With that in mind,
+during this period, a projection of the atom on the z axis appears to be
+constant relative to time.
+
+<figure id="fig:change of phase">
+  <img
+    src="/images/Single-qubit-rotations-In-a-the-black-dots-show-the-population-evolution-during-the.png"
+    style="width:110mm"
+  />
+  <figcaption>
+    Illustration of single qubit rotations. a) shows the measurements during the
+    pulse sequence{" "}
+    <span class="math inline">
+      <em>R</em>(<em>π</em>,0)<em>R</em>(2<em>π</em>,<em>π</em>/2)<em>R</em>(
+      <em>π</em>,0)
+    </span>
+    . b) shows the measurements for the pulse sequence{" "}
+    <span class="math inline">
+      <em>R</em>(3<em>π</em>/2,0)<em>R</em>(<em>π</em>,<em>π</em>/2)<em>R</em>(3
+      <em>π</em>/2,0)
+    </span>
+    in red and the regular Rabi oscillations in blue. Adapted from <span
+      class="citation"
+      data-cites="inproceedings"
+    ></span>.
+  </figcaption>
+</figure>
+
+Moreover, the physical implementation of single qubit gates in ion traps
+has been shown to be accurate up to a certain degree
+[@PhysRevA.84.030303], but the accuracy threshold for reliable quantum
+computing has not yet been achieved [@Preskill1998]. More specifically,
+the rate at which errors occur when we perform a specific gate has to be
+extremely smaller than the rate at which computations are performed.
+
+### Cirac-Zoller CNOT gate
+
+The key idea introduced in the original and pioneering article.
+Foremost, note that a cNOT gate can be achieved with the Hadamard and
+Controlled-Z gates [@nielsen00]. Therefore, since we've discussed how
+the Hadamard is implemented as a single-qubit gate, the novel idea is
+how a Controlled-Z gate works in practice.
+
+![alt text](/images/CNOT.png "Constructing a cNOT gate from the Controlled-Z and Hadamard gates")
+
+To start with, we'll remind the reader that the ions confined in the
+trapping device suffer from Coulomb's Force and therefore are
+equidistant from each other along one of the axis. Moreover, since
+they've been sufficiently cooled per assumption, a laser targeting a
+particular ion can only affect the atom's internal energy state and the
+overall chain's motion [@Wineland1998]. The latter is accomplished by
+detuning the laser from the internal transition by a predetermined
+amount of energy.
+
+Additionally, since the chain's center of mass (CM) motion is induced
+from the control ion's quantum information, we can consider this
+particular motion of the ion chain an auxiliary quantum state. In fact,
+the motion of the chain has several possible states. However, one of the
+preconditions for this experiment is achieving the Lamb-Dicke regime, in
+which transitions larger than one quantum of motion are generally
+suppressed.
+
+With these two ingredients, the first step in the Controlled-Z gate is
+the transferring of information from the control qubit to the chain's CM
+motion. As mentioned before we can force the transition
+$\ket{e}\ket{0} \longrightarrow \ket{g}\ket{1}$ with a proper
+polarization of the laser field and, in fact, this suffices to complete
+the information transfer, see
+[\[eq:transfer\]](#eq:transfer).
+
+$$
+(a\ket{g} + b\ket{e}) \ket{0} = a\ket{g}\ket{0} + b\ket{e}\ket{0} \longrightarrow a\ket{g}\ket{0} + b\ket{g}\ket{1} = \ket{g} (a\ket{0} + b\ket{1})
+$$
+
+Lastly, we can choose a laser polarization such that it drives a
+transition on the target ion only if the auxiliary state is $\ket{1}$.
+Therefore making it possible to establish communication between two
+separate atoms through the chain's CM motion.
+
+Essentially, putting everything together: a laser targets ion $m$,
+transferring its internal energy state to the motion of the chain; from
+there, a second laser targeting ion $n$ only has an effect if the
+chain's state is $\ket{1}$; finally, a similarly tuned laser as in the
+first step is shined upon the first ion, restoring both it and the
+overall chain's original states, while simultaneously inducing a $-1$
+phase on ion $n$, depending on the original state of ion $m$.
+Effectively, completing a Controlled-Z gate. The overall unitary
+operator for this experiment is
+[\[eq:unitaryop\]] as per the original paper
+[@PhysRevLett.74.4091], which delves into more detail on how it should
+be derived.
+
+$$\hat{U}_m^{k,q}(\phi) = \exp[-ik\frac{\pi}{2}(\ket{e_q}_n\bra{g}ae^{-i\phi}+ H.c.)$$
+
+Furthermore, we can observe the evolution of the system in
+[\[eq:czgate\]](#eq:czgate){reference-type="eqref"
+reference="eq:czgate"} exhausting the possible configurations it may
+have.
+
+<img src={/images/Screenshot_20230709_165707.png} alt="Image alt"/>
+
+As a last note, the first successful realization of the Cirac-Zoller
+gate was completed in 2003 [@SchmidtKaler2003], eight years after the
+publishing of the original paper, marking a first step in making quantum
+computers more than a theoretical concept.
+
+## Measuring
+
+As for the measurement of the quantum state after computations have been
+performed, we'll rely on the observation of quantum jumps between
+internal energy states [@Nagourney1986]. Note that for pedagogical
+purposes, we will focus on optical qubits that rely on relatively larger
+energy transitions. Hyperfine qubits are measured with the same
+principle, but leverage the concept of shelving to project a ground
+state in to a meta-stable state (D).
+
+Notice on figure [6](#fig:shelving) how a transition is driven with a laser pulse
+from the ground state to the $D^{5/2}$ state (unlabeled) or, in other
+words, a transition from the $\ket{0}$ to the $\ket{1}$ state in optical
+qubits. Hyperfine qubits utilize the first energy surplus state as
+$\ket{1}$. Furthermore, this forced transition is the only path for the
+transition $S^{1/2}$ $\leftrightarrow$ $D^{5/2}$ to occur.
+
+Consider that the P states are excited states, therefore when they
+naturally decay to the ground state they release photons with a very
+high frequency, making the ion fluorescent. However, in D states the
+same doesn't occur since the transition from the P state takes a
+relatively long time and the photons are released in a sporadic fashion.
+
+<figure id="fig:shelving">
+  <img src="/images/ezgif-5-78a68d49ec.jpg" style="width:50mm" />
+  <figcaption>
+    Valid transitions between internal energy states in a Barium ion{" "}
+    <span class="citation" data-cites="uwqubit"></span>
+  </figcaption>
+</figure>
+
+With all this in mind, upon shining a laser set up to drive the
+transition S $\leftrightarrow$ P on our ion, if we are equipped with a
+photon detector as depicted in
+[7](#fig:photon capture){reference-type="ref"
+reference="fig:photon capture"}, we can detect its state with high
+accuracy by capturing the frequency of emitted photons.
+
+<figure id="fig:photon capture">
+  <img src="/images/Screenshot_20220513_173743.png" style="width:70mm" />
+  <figcaption>
+    Schematic of a device capable of readout on trapped ions. A laser shines on
+    the ion, causing it to scatter photons which are registered on a photon
+    detector. Adapted from <span class="citation" data-cites="Bruzewicz2019"></span>
+    .
+  </figcaption>
+</figure>
+
+On a practical notice, using quantum jumps sprinkled with other
+techniques, such as tracking photon arrival times, has achieved a
+precision of circa 99.9% [@PhysRevLett.100.200502]. Making qubit readout
+extremely accurate and in the order of hundreds of microseconds.
+
+# Limitations and potential
+
+Concluding, now that all the steps required to build a QC with trapped
+ions have been explained, some considerations about their pros and cons
+are required.
+
+First of all, we should be aware that fidelity and accuracy in this
+technology is considered relatively high, or similar, when compared to
+other methods of quantum computing. For instance, state coherence
+lifespan is in the order of minutes, much longer than the time it takes
+to perform computations.
+
+Another aspect is the accuracy that quantum gates sustain, we've
+discussed that the precision for single qubit gates lies in the 99.9
+percentile. Meanwhile, 2-qubit gates share the same accuracy for
+hyperfine qubits, or 99.6% for optical qubits. Both, extremely
+acceptable in the optics of quantum error correction. Moreover, qubit
+initialization and readout are also straightforward given the current
+research available. Both, having high precision techniques available,
+displaying impressive 99.9% or higher percentiles.
+
+In contrast, one disadvantage of ion trapped quantum computing may very
+well be the slow (relatively) time it takes to perform 2-qubit gates.
+Compared to other methods, like superconducting qubits who have measured
+times in the order of nanoseconds [@kjaer], ion QCs lag behind,
+performing logic gates in the magnitude of microseconds, specifically
+$2.6\mu$s as per Schäfer et al. [@Schfer2018].
+
+Finally, we should also consider that this technology is harder to scale
+then competing modalities of quantum computing. While the trapping of
+ions isn't necessarily a concern, the fact that they need to be
+addressable poses a serious problem. Currently, we have an 127-qubit
+processor made by IBM commercially available and with a rapidly
+increasing qubit count in their roadmap
+[@piveteau_annunziata_chow_johnson_2021]. On the other hand, one of the
+most successful companies behind ion trapped quantum computers, IonQ,
+claims to have properly performed single-qubit gates on chains of 79
+ions, and 2-qubit gates on only 11 ion pairs [@Wright2019].
+
+Concluding, at this point ion trapping based quantum computers can be
+seen as reliable with high fidelity and accuracy, but with scaling
+issues in terms of qubits and gate computation speed. With that in mind,
+the competing technologies also have their problems and the optimal
+medium for quantum computing hasn't come to a consensus. However, at
+this point, it is remarkable enough that we have come to the point where
+these technologies are becoming enterprise worthy and not a long, and
+distant, dream.

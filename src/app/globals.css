@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 30 100% 2%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 100% 2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 100% 2%;
+    --primary: 208 93% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 94% 93%;
+    --secondary-foreground: 30 100% 2%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 30 100% 70%;
+    --accent: 28 79% 51%;
+    --accent-foreground: 30 100% 2%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 30 100% 2%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 28 79% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 30 100% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 30 100% 98%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 30 100% 98%;
+    --primary: 208 93% 60%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 269 94% 7%;
+    --secondary-foreground: 30 100% 98%;
+    --muted: 0 0% 80%;
+    --muted-foreground: 30 100% 98%;
+    --accent: 28 79% 49%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 31 100% 10%;
+    --border: 0 0% 60%;
+    --input: 0 0% 80%;
+    --ring: 28 79% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .title {
+    @apply text-2xl font-semibold leading-none tracking-tight;
+  }
+}
