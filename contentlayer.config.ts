@@ -1,7 +1,5 @@
 // contentlayer.config.ts
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -23,8 +21,5 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "posts",
   documentTypes: [Post],
-  mdx: {
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex()],
-  },
+
 });
