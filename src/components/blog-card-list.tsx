@@ -28,7 +28,7 @@ const BlogCardList: FC<BlogCardListProps> = async ({ className, ...props }) => {
   ];
 
   return (
-    <div className={cn("grid grid-cols-2 gap-4", className)}>
+    <div className={cn("grid lg:grid-cols-2 gap-4", className)}>
       {blogs.map((blog, index) => {
         return (
           <BlogCard

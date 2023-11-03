@@ -7,7 +7,6 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import Link from "next/link";
-import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 interface BlogCardProps {
@@ -23,7 +22,7 @@ const BlogCard: FC<BlogCardProps> = async ({ className, ...props }) => {
     <Link href={`posts/${props.slug}`}>
       <Card
         className={cn(
-          "hover:bg-accent hover:text-accent-foreground h-48 duration-500",
+          "hover:bg-accent hover:text-accent-foreground lg:h-48 duration-500",
           className
         )}
       >

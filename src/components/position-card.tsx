@@ -19,10 +19,10 @@ interface PositionCardProps {
 
 const PositionCard: FC<PositionCardProps> = async ({ className, ...props }) => {
   return (
-    <Card>
+    <Card className="">
       <CardHeader>
         <CardTitle>{props.title}</CardTitle>
-        <CardDescription className="flex flex-row">
+        <CardDescription className="">
           <span className="text-primary">{props.company}</span>
           <span className="pl-2 text-muted">
             {props.startDate}
