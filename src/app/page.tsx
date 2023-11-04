@@ -3,8 +3,6 @@ import BlogCardList from "@/components/blog-card-list";
 import EducationCardList from "@/components/edu-card-list";
 import ExperiencceCardList from "@/components/exp-card-list";
 
-const runtime = "edge";
-
 export default function Home() {
   return (
     <main className="flex flex-col mx-6 lg:mx-auto lg:max-w-3xl xl:max-w-5xl">
