@@ -1,7 +1,8 @@
 // app/posts/[slug]/page.tsx
-import { format, parseISO } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import PostHeader from "@/components/post-header";
+
+const runtime = "edge";
 
 export const generateStaticParams = async () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));

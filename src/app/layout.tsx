@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Computer Science and Machine Learning student",
 };
 
+const runtime = "edge";
+
 export default function RootLayout({
   children,
 }: {
