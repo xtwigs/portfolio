@@ -8,6 +8,8 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { format, parseISO } from "date-fns";
+
 
 interface BlogCardProps {
   className?: string;
@@ -19,17 +21,20 @@ interface BlogCardProps {
 
 const BlogCard: FC<BlogCardProps> = async ({ className, ...props }) => {
   return (
-    <Link href={`posts/${props.slug}`}>
+    <Link href={props.slug}>
       <Card
         className={cn(
-          "hover:bg-accent hover:text-accent-foreground lg:h-48 duration-500",
+          "hover:bg-accent hover:text-accent-foreground lg:h-48 duration-500 flex flex-col justify-between",
           className
         )}
       >
         <CardHeader>
           <CardTitle>{props.title}</CardTitle>
           <CardDescription className="flex flex-row">
-            <span className="text-muted">{props.date}</span>
+            <time dateTime={props.date} className="text-muted">
+              {format(parseISO(props.date), "LLLL d, yyyy")}
+            </time>
+            
           </CardDescription>
         </CardHeader>
         <CardContent className="font-mono">{props.description}</CardContent>

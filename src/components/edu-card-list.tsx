@@ -11,19 +11,20 @@ const EducationCardList: FC<EducationCardListProps> = async ({
 }) => {
   const experiences = [
     {
-      title: "bachelor in Computer Science and Engineering",
+      title: "lisbon machine learning school",
       company: "Instituto Superior Técnico",
-      startDate: "Sep 2018",
-      endDate: "Jul 2021",
+      startDate: "Jul 2023",
+      endDate: "",
       location: "Lisbon",
       content: (
         <ul className="list-disc list-inside">
           <li>
-            coordinated group projects in areas like Software Engineering,
-            Distributed Systems, Networking, and Databases
+            week-long school covering everything from fundamental Machine
+            Learning to Transformers and Multimodality
           </li>
           <li>
-            graduated with 17/20 average (Academic Merit Distinction), ECTS: A-
+            attended lectures, labs and keynotes from selected speakers and
+            distinguished professors and renowned researchers
           </li>
         </ul>
       ),
@@ -53,39 +54,19 @@ const EducationCardList: FC<EducationCardListProps> = async ({
       ),
     },
     {
-      title: "lisbon machine learning school",
+      title: "bachelor in Computer Science and Engineering",
       company: "Instituto Superior Técnico",
-      startDate: "Jul 2023",
-      endDate: "",
+      startDate: "Sep 2018",
+      endDate: "Jul 2021",
       location: "Lisbon",
       content: (
         <ul className="list-disc list-inside">
           <li>
-            week-long school covering everything from fundamental Machine
-            Learning to Transformers and Multimodality
+            coordinated group projects in areas like Software Engineering,
+            Distributed Systems, Networking and ML
           </li>
           <li>
-            attended lectures, labs and keynotes from selected speakers and
-            distinguished professors and renowned researchers
-          </li>
-        </ul>
-      ),
-    },
-    {
-      title: "master thesis",
-      company: "Instituto de Telecomunicações - Sardine Lab",
-      startDate: "Oct 2023",
-      endDate: "Present",
-      location: "Lisbon",
-      content: (
-        <ul className="list-disc list-inside">
-          <li>working on novel architectures in NLP (RetNet, S4, ...)</li>
-          <li>
-            advised by{" "}
-            <Link className="underline hover:text-accent duration-500" href="https://andre-martins.github.io/">
-              Prof. André Martins
-            </Link>{" "}
-            and <Link className="underline hover:text-accent duration-500" href="https://mtreviso.github.io/">Marcos Treviso</Link>
+            graduated with 17/20 average (Academic Merit Distinction), ECTS: A-
           </li>
         </ul>
       ),
