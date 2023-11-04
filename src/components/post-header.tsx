@@ -25,11 +25,12 @@ const PostHeader: FC<PostHeaderProps> = async ({ className, ...props }) => {
     <Card className={cn("", className)}>
       <CardHeader>
         <div className="flex">
-          <CardTitle className="">{props.title}</CardTitle>
+          <CardTitle className="">{props.title} </CardTitle>
+
           {props.pdf && (
             <Link
               href={props.pdf}
-              className="hover:text-accent duration-500 ml-2 mt-[2px]"
+              className="hover:text-accent duration-500 ml-2 "
               prefetch={false}
             >
               <ArrowDownToLine size={24} />
