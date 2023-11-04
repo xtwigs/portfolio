@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GeistSans, GeistMono } from "geist/font";
+import {Analytics} from "@vercel/analytics/react";
 
 import "./globals.css";
 import NavBar from "@/components/navbar";
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
         <NavBar />
         {children}
+        <Analytics/>
       </body>
     </html>
   );
