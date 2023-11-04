@@ -20,9 +20,14 @@ interface AboutProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const About: FC<AboutProps> = async ({ className, ...props }) => {
   return (
-    <Card className={cn("grid lg:grid-cols-2 max-w-3xl py-8 pb-0 lg:py-10 ", className)}>
+    <Card
+      className={cn(
+        "grid lg:grid-cols-2 max-w-3xl py-8 pb-0 lg:py-10",
+        className
+      )}
+    >
       <Image
-        className="rounded-full h-64 w-64 ring-2 ring-white place-self-center "
+        className="rounded-full h-64 w-64 ring-2 ring-white place-self-center"
         alt="Avatar"
         src={Spaceship}
       />

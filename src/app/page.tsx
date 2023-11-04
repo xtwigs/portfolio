@@ -2,6 +2,7 @@ import About from "@/components/about";
 import BlogCardList from "@/components/blog-card-list";
 import EducationCardList from "@/components/edu-card-list";
 import ExperiencceCardList from "@/components/exp-card-list";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -11,18 +12,19 @@ export default function Home() {
           <About className="mx-auto" />
         </div>
         <div className="py-16">
-          <div id="experience" className="pt-4 ">
+          <div id="experience" className="pt-4 mt-32 ">
             <h1 className="title">experience</h1>
             <ExperiencceCardList className="pt-8" />
           </div>
-          <div id="education" className="pt-4 ">
-            <h1 className="pt-32 title">education</h1>
+          <div id="education" className="pt-4 mt-32">
+            <h1 className=" title">education</h1>
             <EducationCardList className="pt-8" />
           </div>
-          <div id="blog" className="pt-4 ">
-            <h1 className="pt-32 title">blog</h1>
+          <div id="blog" className="pt-4 mt-32">
+            <h1 className="title">blog</h1>
             <BlogCardList className="pt-8" />
           </div>
+          <Footer className="pt-56 pb-24" />
         </div>
       </div>
     </main>

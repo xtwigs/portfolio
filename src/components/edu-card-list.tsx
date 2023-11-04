@@ -23,7 +23,7 @@ const EducationCardList: FC<EducationCardListProps> = async ({
             Learning to Transformers and Multimodality
           </li>
           <li>
-            attended lectures, labs and keynotes from selected speakers and
+            attended lectures, labs and keynotes from selected speakers,
             distinguished professors and renowned researchers
           </li>
         </ul>
