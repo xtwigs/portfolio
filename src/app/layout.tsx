@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { GeistSans, GeistMono } from "geist/font";
-import {Analytics} from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 import NavBar from "@/components/navbar";
@@ -17,10 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${GeistMono.variable}`}>
+      <body className={GeistMono.variable}>
         <NavBar />
         {children}
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   );
