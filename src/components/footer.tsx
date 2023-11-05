@@ -6,13 +6,12 @@ interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const Footer: FC<FooterProps> = ({ className, ...props }) => {
   return (
-    <footer className={cn("text-2xl font-mono leading-none ", className)}>
-      something caught your eye?
+    <footer className={cn(" ", className)}>
       <Link
-        className="ml-2 underline hover:text-accent duration-500"
+        className="text-2xl font-mono leading-none underline flex justify-center hover:text-accent duration-500"
         href="mailto:hugo.pitorro@tum.de"
       >
-        reach out
+        say hi
       </Link>
     </footer>
   );

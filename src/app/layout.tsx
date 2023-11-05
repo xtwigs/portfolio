@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`${GeistMono.variable}`}>
         <NavBar />
         {children}
         <Analytics/>

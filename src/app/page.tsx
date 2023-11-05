@@ -24,7 +24,7 @@ export default function Home() {
             <h1 className="title">blog</h1>
             <BlogCardList className="pt-8" />
           </div>
-          <Footer className="pt-56 pb-24" />
+          <Footer className="pt-40 pb-24" />
         </div>
       </div>
     </main>
