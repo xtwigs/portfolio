@@ -14,7 +14,7 @@ import {
 
 import Image from "next/image";
 import { buttonVariants } from "./ui/button";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { FileText, Github, Linkedin, Mail } from "lucide-react";
 
 interface AboutProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -40,12 +40,13 @@ const About: FC<AboutProps> = async ({ className, ...props }) => {
         <CardContent>
           <h2 className="font-mono">
             i&apos;m a Computer Science student at the Technical University of
-            Munich and Co-Founder at SMP Technologies
+            Munich
           </h2>
         </CardContent>
         <CardFooter className="flex flex-row gap-6">
           <Link
             href="mailto:hugo.pitorro@tum.de"
+            target="_blank"
             className={cn(
               buttonVariants({ variant: "ghost", size: "icon" }),
               "rounded-full hover:text-white duration-500"
@@ -55,6 +56,7 @@ const About: FC<AboutProps> = async ({ className, ...props }) => {
           </Link>
           <Link
             href="https://www.linkedin.com/in/hugo-henrique-pitorro"
+            target="_blank"
             className={cn(
               buttonVariants({ variant: "ghost", size: "icon" }),
               "rounded-full hover:text-white duration-500"
@@ -64,12 +66,23 @@ const About: FC<AboutProps> = async ({ className, ...props }) => {
           </Link>
           <Link
             href="https://github.com/xtwigs"
+            target="_blank"
             className={cn(
               buttonVariants({ variant: "ghost", size: "icon" }),
               "rounded-full hover:text-white duration-500"
             )}
           >
             <Github />
+          </Link>
+          <Link
+            href="/cv.pdf"
+            target="_blank"
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "icon" }),
+              "rounded-full hover:text-white duration-500"
+            )}
+          >
+            <FileText />
           </Link>
         </CardFooter>
       </div>

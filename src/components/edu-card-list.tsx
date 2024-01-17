@@ -49,7 +49,7 @@ const EducationCardList: FC<EducationCardListProps> = async ({
             worked on a financial assistant chatbot in the Chair of Digital
             Finance
           </li>
-          <li>projected average of 1.8/5, ECTS: A-</li>
+          <li>projected average of 1.8/5, ECTS: A</li>
         </ul>
       ),
     },
@@ -66,7 +66,7 @@ const EducationCardList: FC<EducationCardListProps> = async ({
             Distributed Systems, Networking and ML
           </li>
           <li>
-            graduated with 17/20 average (Academic Merit Distinction), ECTS: A-
+            graduated with 17/20 average (Academic Merit Distinction), ECTS: A
           </li>
         </ul>
       ),

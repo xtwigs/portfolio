@@ -22,6 +22,10 @@ const NavBar: FC<NavBarProps> = async ({ className, ...props }) => {
       href: "/#education",
     },
     {
+      name: "projects",
+      href: "/#projects",
+    },
+    {
       name: "blog",
       href: "/#blog",
     },

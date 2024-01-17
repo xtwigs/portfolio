@@ -42,8 +42,8 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
     {
       title: "co-founder & CTO",
       company: "SMP Technologies",
-      startDate: "Nov 2022",
-      endDate: "Jul 2023",
+      startDate: "May 2023",
+      endDate: "Oct 2023",
       location: "Munich",
       content: (
         <ul className="list-disc list-inside">
@@ -76,7 +76,7 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
             developed a framework for fine-tuning/evaluating various DL models
             in different NLP downstream tasks
           </li>
-          <li>co-authored publications in the review process</li>
+          <li>co-authored experimental publications that were uncontinued</li>
         </ul>
       ),
     },
