@@ -40,7 +40,7 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
       ),
     },
     {
-      title: "co-founder & CTO",
+      title: "co-founder",
       company: "SMP Technologies",
       startDate: "May 2023",
       endDate: "Oct 2023",
