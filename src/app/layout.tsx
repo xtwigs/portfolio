@@ -12,14 +12,18 @@ export const metadata: Metadata = {
   description: "Computer Science and Machine Learning student",
 };
 
+
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+  console.log(GeistSans.variable, GeistMono.variable)
   return (
     <html lang="en" className="dark">
-      <body className={GeistSans.variable && GeistMono.variable}>
+      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
         <NavBar />
         {children}
         <Analytics />
