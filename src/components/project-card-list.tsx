@@ -19,18 +19,27 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
       content: (
         <ul className="list-disc list-inside">
           <li>
-            lead developer of the open-source{" "}
+            lead developer of a Retrieval-Augmented Generation LLM{" "}
             <Link
               className="underline hover:text-accent duration-500"
               href="https://politica-aberta.pt"
             >
-              project
+              system
             </Link>
           </li>
-          <li>built a RAG pipeline for the current portuguese elections</li>
           <li>
-            built the website using React with NextJS and a LlamaIndex-powered
-            Flask server
+            the open-source project intends to simplify access to the political
+            parties&apos; election promises and manifests.
+          </li>
+          <li>
+            built the system using React, Flask and the OpenAI API.{" "}
+            <Link
+              className="underline hover:text-accent duration-500"
+              href="https://github.com/politica-aberta"
+            >
+              Github
+            </Link>
+            .
           </li>
         </ul>
       ),

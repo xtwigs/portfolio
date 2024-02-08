@@ -19,7 +19,10 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
       location: "Lisbon",
       content: (
         <ul className="list-disc list-inside">
-          <li>working on novel architectures in NLP (RetNet, S4, ...)</li>
+          <li>
+            working on State Space architectures in NLP for document-level
+            machine translation (RetNet, S4, Mamba, ...)
+          </li>
           <li>
             advised by{" "}
             <Link
@@ -48,15 +51,21 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
       content: (
         <ul className="list-disc list-inside">
           <li>
-            designed and coded the company&apos;s{" "}
+            co-founded a startup intended to solve and automate enterprise
+            problems and tasks with modern AI technologies (Generative AI,
+            Computer Vision)
+          </li>
+
+          <li>
+            Designed and implemented the company&apos;s{" "}
             <Link
               className="underline hover:text-accent duration-500"
               href="https://smptech.pt"
             >
               website
             </Link>
+            , hosting the required business infrastructure on AWS
           </li>
-          <li>hosted the required infrastructure on AWS</li>
           <li>
             conceptualized and wrote content for workshops covering Generative
             AI in a business setting
@@ -76,7 +85,23 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
             developed a framework for fine-tuning/evaluating various DL models
             in different NLP downstream tasks
           </li>
-          <li>co-authored experimental publications that were uncontinued</li>
+          <li>co-authored publication drafts that were discontinued</li>
+          <li>
+            advised by{" "}
+            <Link
+              className="underline hover:text-accent duration-500"
+              href="https://mtreviso.github.io/"
+            >
+              Anum Afzal
+            </Link>{" "}
+            and{" "}
+            <Link
+              className="underline hover:text-accent duration-500"
+              href="https://wwwmatthes.in.tum.de/pages/88bkmvw6y7gx/Prof.-Dr.-Florian-Matthes"
+            >
+              Prof. Dr. Florian Matthes
+            </Link>
+          </li>
         </ul>
       ),
     },

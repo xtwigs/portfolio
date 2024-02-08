@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 
+
 import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
@@ -12,18 +13,14 @@ export const metadata: Metadata = {
   description: "Computer Science and Machine Learning student",
 };
 
-
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-
-  console.log(GeistSans.variable, GeistMono.variable)
   return (
     <html lang="en" className="dark">
-      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={` ${GeistMono.variable} ${GeistSans.variable}`}>
         <NavBar />
         {children}
         <Analytics />

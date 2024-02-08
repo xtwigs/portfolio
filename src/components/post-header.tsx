@@ -30,7 +30,8 @@ const PostHeader: FC<PostHeaderProps> = async ({ className, ...props }) => {
           {props.pdf && (
             <Link
               href={props.pdf}
-              className="hover:text-accent duration-500 ml-2 "
+              target="_blank"
+              className="hover:text-accent duration-500 ml-2 mt-[2px] "
               prefetch={false}
             >
               <ArrowDownToLine size={24} />
