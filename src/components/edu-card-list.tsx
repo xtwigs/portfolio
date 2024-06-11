@@ -33,7 +33,7 @@ const EducationCardList: FC<EducationCardListProps> = async ({
       title: "master in Informatics",
       company: "Technical University of Munich",
       startDate: "Oct 2021",
-      endDate: "Present",
+      endDate: "May 2024",
       location: "Munich",
       content: (
         <ul className="list-disc list-inside">
@@ -42,14 +42,14 @@ const EducationCardList: FC<EducationCardListProps> = async ({
             areas
           </li>
           <li>
-            lead the team and built a Text Simplification system with a pipeline
+            team lead in building a Text Simplification system with a pipeline  
             of Deep Learning models
           </li>
           <li>
             worked on a financial assistant chatbot in the Chair of Digital
             Finance
           </li>
-          <li>projected average of 1.8/5, ECTS: A</li>
+          <li>average of 1.8/5, ECTS: A</li>
         </ul>
       ),
     },

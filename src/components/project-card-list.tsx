@@ -14,7 +14,7 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
       title: "Política Aberta",
       company: "Remote",
       startDate: "Dec 2023",
-      endDate: "Present",
+      endDate: "Mar 2024",
       location: "Lisbon",
       content: (
         <ul className="list-disc list-inside">
@@ -29,17 +29,17 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
           </li>
           <li>
             the open-source project intends to simplify access to the political
-            parties&apos; election promises and manifests.
+            parties&apos; election promises and manifests
           </li>
           <li>
-            built the system using React, Flask and the OpenAI API.{" "}
+            built the system using React, Flask and the OpenAI API{" "}
             <Link
               className="underline hover:text-accent duration-500"
               href="https://github.com/politica-aberta"
             >
               Github
             </Link>
-            .
+          
           </li>
         </ul>
       ),

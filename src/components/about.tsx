@@ -20,7 +20,7 @@ interface AboutProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const About: FC<AboutProps> = async ({ className, ...props }) => {
   return (
-    <Card
+    <div
       className={cn(
         "grid lg:grid-cols-2 max-w-3xl py-8 pb-0 lg:py-10",
         className
@@ -86,7 +86,7 @@ const About: FC<AboutProps> = async ({ className, ...props }) => {
           </Link>
         </CardFooter>
       </div>
-    </Card>
+    </div>
   );
 };
 

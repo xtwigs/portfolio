@@ -14,13 +14,13 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
     {
       title: "master thesis",
       company: "Instituto de Telecomunicações - Sardine Lab",
-      startDate: "Oct 2023",
-      endDate: "Present",
+      startDate: "Dec 2023",
+      endDate: "May 2024",
       location: "Lisbon",
       content: (
         <ul className="list-disc list-inside">
           <li>
-            working on State Space architectures in NLP for document-level
+            worked on State Space architectures in NLP for document-level
             machine translation (RetNet, S4, Mamba, ...)
           </li>
           <li>
@@ -37,6 +37,14 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
               href="https://mtreviso.github.io/"
             >
               Marcos Treviso
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="underline hover:text-accent duration-500"
+              href="thesis.pdf"
+            >
+              final document
             </Link>
           </li>
         </ul>
