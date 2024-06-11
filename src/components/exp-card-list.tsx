@@ -68,7 +68,7 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
             Designed and implemented the company&apos;s{" "}
             <Link
               className="underline hover:text-accent duration-500"
-              href="https://smptech.pt"
+              href="https://smp.pitorro.de"
             >
               website
             </Link>
