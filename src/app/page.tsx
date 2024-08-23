@@ -4,6 +4,7 @@ import EducationCardList from "@/components/edu-card-list";
 import ExperiencceCardList from "@/components/exp-card-list";
 import Footer from "@/components/footer";
 import ProjectCardList from "@/components/project-card-list";
+import PublicationCardList from "@/components/pub-card-list";
 
 export default function Home() {
   return (
@@ -20,6 +21,10 @@ export default function Home() {
           <div id="education" className="pt-4 mt-32">
             <h1 className="title">education</h1>
             <EducationCardList className="pt-8" />
+          </div>
+          <div id="publications" className="pt-4 mt-32">
+            <h1 className="title">publications</h1>
+            <PublicationCardList className="pt-8" />
           </div>
           <div id="projects" className="pt-4 mt-32">
             <h1 className="title">projects</h1>

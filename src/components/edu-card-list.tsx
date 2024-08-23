@@ -38,18 +38,35 @@ const EducationCardList: FC<EducationCardListProps> = async ({
       content: (
         <ul className="list-disc list-inside">
           <li>
+            thesis:{" "}
+            <Link
+              className="underline hover:text-accent duration-500"
+              href="/thesis.pdf"
+              target="_blank"
+            >
+              Exploring Efficient Approaches for Long-Context NLP
+            </Link>{" "}
+          </li>
+          <li>
             completed several courses in ML, Scientific and Quantum Computing
             areas
           </li>
           <li>
-            team lead in building a Text Simplification system with a pipeline  
-            of Deep Learning models
+            built a text simplification{" "}
+            <Link
+              className="underline hover:text-accent duration-500"
+              href="/post/text-simplification-report.pdf"
+              target="_blank"
+            >
+              system
+            </Link>{" "}
+            with a pipeline of Deep Learning models
           </li>
           <li>
             worked on a financial assistant chatbot in the Chair of Digital
             Finance
           </li>
-          <li>average of 1.8/5, ECTS: A</li>
+          <li>graduated with an average of 1.8/5, ECTS: A</li>
         </ul>
       ),
     },

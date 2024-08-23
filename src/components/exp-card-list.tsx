@@ -12,22 +12,23 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
 }) => {
   const experiences = [
     {
-      title: "master thesis",
+      title: "research assistant",
       company: "Instituto de Telecomunicações - Sardine Lab",
-      startDate: "Dec 2023",
-      endDate: "May 2024",
+      startDate: "Jul 2024",
+      endDate: "Present",
       location: "Lisbon",
       content: (
         <ul className="list-disc list-inside">
           <li>
-            worked on State Space architectures in NLP for document-level
-            machine translation (RetNet, S4, Mamba, ...)
+            working on context-efficient alternatives to the transformer
+            architecture and their interpretability mechanisms
           </li>
           <li>
             advised by{" "}
             <Link
               className="underline hover:text-accent duration-500"
               href="https://andre-martins.github.io/"
+              target="_blank"
             >
               Prof. André Martins
             </Link>{" "}
@@ -35,16 +36,9 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
             <Link
               className="underline hover:text-accent duration-500"
               href="https://mtreviso.github.io/"
+              target="_blank"
             >
               Marcos Treviso
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="underline hover:text-accent duration-500"
-              href="thesis.pdf"
-            >
-              final document
             </Link>
           </li>
         </ul>
@@ -63,20 +57,9 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
             problems and tasks with modern AI technologies (Generative AI,
             Computer Vision)
           </li>
-
           <li>
-            Designed and implemented the company&apos;s{" "}
-            <Link
-              className="underline hover:text-accent duration-500"
-              href="https://smp.pitorro.de"
-            >
-              website
-            </Link>
-            , hosting the required business infrastructure on AWS
-          </li>
-          <li>
-            conceptualized and wrote content for workshops covering Generative
-            AI in a business setting
+            designed and built the company&apos;s business infrastructure,
+            deployed using AWS.
           </li>
         </ul>
       ),
@@ -93,12 +76,13 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
             developed a framework for fine-tuning/evaluating various DL models
             in different NLP downstream tasks
           </li>
-          <li>co-authored publication drafts that were discontinued</li>
+          <li>co-authored unpublished papers <Link className='underline hover:text-accent duration-500' href="post/llm-text-summarization.pdf">[1]</Link></li>
           <li>
             advised by{" "}
             <Link
               className="underline hover:text-accent duration-500"
-              href="https://mtreviso.github.io/"
+              href="https://scholar.google.com/citations?user=xpZ8GRgAAAAJ"
+              target="_blank"
             >
               Anum Afzal
             </Link>{" "}
@@ -106,6 +90,7 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
             <Link
               className="underline hover:text-accent duration-500"
               href="https://wwwmatthes.in.tum.de/pages/88bkmvw6y7gx/Prof.-Dr.-Florian-Matthes"
+              target="_blank"
             >
               Prof. Dr. Florian Matthes
             </Link>

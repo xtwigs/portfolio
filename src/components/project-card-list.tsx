@@ -26,10 +26,8 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
             >
               system
             </Link>
-          </li>
-          <li>
-            the open-source project intends to simplify access to the political
-            parties&apos; election promises and manifests
+            , the open-source project intends to simplify access to the
+            political parties&apos; election promises and manifests
           </li>
           <li>
             built the system using React, Flask and the OpenAI API{" "}
@@ -39,7 +37,6 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
             >
               Github
             </Link>
-          
           </li>
         </ul>
       ),
