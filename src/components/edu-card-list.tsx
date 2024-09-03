@@ -20,7 +20,7 @@ const EducationCardList: FC<EducationCardListProps> = async ({
         <ul className="list-disc list-inside">
           <li>
             week-long school covering everything from fundamental Machine
-            Learning to Transformers and Multimodality
+            Learning, transformers, multimodality and causality
           </li>
           <li>
             attended lectures, labs and keynotes from selected speakers,
@@ -66,7 +66,7 @@ const EducationCardList: FC<EducationCardListProps> = async ({
             worked on a financial assistant chatbot in the Chair of Digital
             Finance
           </li>
-          <li>graduated with an average of 1.8/5, ECTS: A</li>
+          <li>graduated with an average of 1.8/5, merit, ECTS: A</li>
         </ul>
       ),
     },

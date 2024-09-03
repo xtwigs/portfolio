@@ -30,7 +30,7 @@ const PositionCard: FC<PositionCardProps> = async ({ className, ...props }) => {
           </span>
         </CardDescription>
       </CardHeader>
-      <CardContent className=" font-mono">{props.content}</CardContent>
+      <CardContent className="font-mono">{props.content}</CardContent>
     </Card>
   );
 };

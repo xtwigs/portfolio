@@ -2,14 +2,13 @@ import About from "@/components/about";
 import BlogCardList from "@/components/blog-card-list";
 import EducationCardList from "@/components/edu-card-list";
 import ExperiencceCardList from "@/components/exp-card-list";
-import Footer from "@/components/footer";
 import ProjectCardList from "@/components/project-card-list";
 import PublicationCardList from "@/components/pub-card-list";
 
 export default function Home() {
   return (
     <main className="flex flex-col mx-6 lg:mx-auto lg:max-w-3xl xl:max-w-5xl">
-      <div className="lg:pl-32">
+      <div className="">
         <div id="about" className="h-screen flex items-center w-full">
           <About className="mx-auto" />
         </div>
@@ -35,7 +34,6 @@ export default function Home() {
             <h1 className="title">blog</h1>
             <BlogCardList className="pt-8" />
           </div>
-          {/* <Footer className="pt-40 pb-24" /> */}
         </div>
       </div>
     </main>

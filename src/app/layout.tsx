@@ -6,7 +6,6 @@ import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
-import NavBar from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: "Hugo Pitorro",
@@ -21,7 +20,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={` ${GeistMono.variable} ${GeistSans.variable}`}>
-        <NavBar />
         {children}
         <Analytics />
       </body>
