@@ -39,13 +39,12 @@ const About: FC<AboutProps> = async ({ className, ...props }) => {
         </CardHeader>
         <CardContent>
           <h2 className="font-mono">
-            i&apos;m a Computer Science student at the Technical University of
-            Munich
+            i&apos;m a researcher at the Instituto de Telecomunicações in Lisbon
           </h2>
         </CardContent>
         <CardFooter className="flex flex-row gap-6">
           <Link
-            href="mailto:hugo.pitorro@tum.de"
+            href="mailto:hugo.pitorro@gmail.com"
             target="_blank"
             className={cn(
               buttonVariants({ variant: "ghost", size: "icon" }),

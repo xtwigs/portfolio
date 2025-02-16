@@ -14,8 +14,8 @@ const PublicationCardList: FC<PublicationCardListProps> = async ({
     {
       title: "How Effective are State Space Models for Machine Translation?",
       authors: "Hugo Pitorro, Pavlo Vasylenko, Marcos Treviso, André F. T. Martins",
-      link: "https://arxiv.org/abs/2407.05489",
-      venue: "arXiv preprint",
+      link: "https://aclanthology.org/2024.wmt-1.111/",
+      venue: "WMT 2024",
     },
   ];
 

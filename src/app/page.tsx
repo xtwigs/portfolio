@@ -1,7 +1,6 @@
 import About from "@/components/about";
-import BlogCardList from "@/components/blog-card-list";
 import EducationCardList from "@/components/edu-card-list";
-import ExperiencceCardList from "@/components/exp-card-list";
+import ExperienceCardList from "@/components/exp-card-list";
 import ProjectCardList from "@/components/project-card-list";
 import PublicationCardList from "@/components/pub-card-list";
 
@@ -15,24 +14,19 @@ export default function Home() {
         <div className="py-16">
           <div id="experience" className="pt-4 mt-32 ">
             <h1 className="title">experience</h1>
-            <ExperiencceCardList className="pt-8" />
-          </div>
-          <div id="projects" className="pt-4 mt-32">
-            <h1 className="title">projects</h1>
-            <ProjectCardList className="pt-8" />
-          </div>
-          <div id="education" className="pt-4 mt-32">
-            <h1 className="title">education</h1>
-            <EducationCardList className="pt-8" />
+            <ExperienceCardList className="pt-8" />
           </div>
           <div id="publications" className="pt-4 mt-32">
             <h1 className="title">publications</h1>
             <PublicationCardList className="pt-8" />
           </div>
-   
-          <div id="blog" className="pt-4 mt-32">
-            <h1 className="title">blog</h1>
-            <BlogCardList className="pt-8" />
+          <div id="education" className="pt-4 mt-32">
+            <h1 className="title">education</h1>
+            <EducationCardList className="pt-8" />
+          </div>
+          <div id="projects" className="pt-4 mt-32">
+            <h1 className="title">projects</h1>
+            <ProjectCardList className="pt-8" />
           </div>
         </div>
       </div>

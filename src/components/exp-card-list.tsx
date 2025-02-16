@@ -6,7 +6,7 @@ import { FC } from "react";
 interface ExperienceCardListProps
   extends React.HTMLAttributes<HTMLDivElement> {}
 
-const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
+const ExperienceCardList: FC<ExperienceCardListProps> = async ({
   className,
   ...props
 }) => {
@@ -38,7 +38,7 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
               href="https://mtreviso.github.io/"
               target="_blank"
             >
-              Marcos Treviso
+              Dr. Marcos Treviso
             </Link>
           </li>
         </ul>
@@ -76,7 +76,6 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
             developed a framework for fine-tuning/evaluating various DL models
             in different NLP downstream tasks
           </li>
-          <li>co-authored unpublished papers <Link className='underline hover:text-accent duration-500' href="post/llm-text-summarization.pdf">[1]</Link></li>
           <li>
             advised by{" "}
             <Link
@@ -119,4 +118,4 @@ const ExperiencceCardList: FC<ExperienceCardListProps> = async ({
   );
 };
 
-export default ExperiencceCardList;
+export default ExperienceCardList;
