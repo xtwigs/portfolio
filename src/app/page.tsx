@@ -1,8 +1,8 @@
 import About from "@/components/about";
-import EducationCardList from "@/components/edu-card-list";
-import ExperienceCardList from "@/components/exp-card-list";
-import ProjectCardList from "@/components/project-card-list";
-import PublicationCardList from "@/components/pub-card-list";
+import EducationCardList from "@/components/education";
+import ExperienceCardList from "@/components/experiences";
+import ProjectCardList from "@/components/projects";
+import PublicationCardList from "@/components/publications";
 
 export default function Home() {
   return (

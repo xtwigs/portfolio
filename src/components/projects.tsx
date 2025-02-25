@@ -1,8 +1,44 @@
-import PositionCard from "@/components/position-card";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FC } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import React from "react";
 
+// Project Card Component
+interface ProjectCardProps {
+  className?: string;
+  title: string;
+  company: string;
+  startDate: string;
+  endDate?: string;
+  content: React.ReactNode;
+}
+
+const ProjectCard: FC<ProjectCardProps> = async ({ className, ...props }) => {
+  return (
+    <Card className={className}>
+      <CardHeader>
+        <CardTitle className="text-xl font-semibold">{props.title}</CardTitle>
+        <CardDescription className="">
+          <span className="text-primary font-medium">{props.company}</span>
+          <span className="pl-2 text-muted-foreground">
+            {props.startDate}
+            {props.endDate ? ` - ${props.endDate}` : ""}
+          </span>
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="font-mono">{props.content}</CardContent>
+    </Card>
+  );
+};
+
+// Project Card List Component
 interface ProjectCardListProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const ProjectCardList: FC<ProjectCardListProps> = async ({
@@ -14,8 +50,7 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
       title: "Política Aberta",
       company: "Remote",
       startDate: "Dec 2023",
-      endDate: "Mar 2024",
-      location: "Lisbon",
+      endDate: undefined,
       content: (
         <ul className="list-disc list-inside">
           <li>
@@ -47,13 +82,12 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
     <div className={cn("flex flex-col space-y-4", className)}>
       {projects.map((proj, index) => {
         return (
-          <PositionCard
+          <ProjectCard
             key={index}
             title={proj.title}
             company={proj.company}
             startDate={proj.startDate}
             endDate={proj.endDate}
-            location={proj.location}
             content={proj.content}
           />
         );

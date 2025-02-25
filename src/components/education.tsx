@@ -1,8 +1,47 @@
-import PositionCard from "@/components/position-card";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FC } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
+// Education Card Component
+interface EducationCardProps {
+  className?: string;
+  title: string;
+  company: string;
+  startDate: string;
+  endDate?: string;
+  location: string;
+  content: React.ReactNode;
+}
+
+const EducationCard: FC<EducationCardProps> = async ({
+  className,
+  ...props
+}) => {
+  return (
+    <Card className="">
+      <CardHeader>
+        <CardTitle>{props.title}</CardTitle>
+        <CardDescription className="">
+          <span className="text-primary">{props.company}</span>
+          <span className="pl-2 text-muted">
+            {props.startDate}
+            {props.endDate ? ` - ${props.endDate}` : ""}, {props.location}
+          </span>
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="font-mono">{props.content}</CardContent>
+    </Card>
+  );
+};
+
+// Education Card List Component
 interface EducationCardListProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const EducationCardList: FC<EducationCardListProps> = async ({
@@ -52,15 +91,8 @@ const EducationCardList: FC<EducationCardListProps> = async ({
             areas
           </li>
           <li>
-            built a text simplification{" "}
-            <Link
-              className="underline hover:text-accent duration-500"
-              href="/post/text-simplification-report.pdf"
-              target="_blank"
-            >
-              system
-            </Link>{" "}
-            with a pipeline of Deep Learning models
+            built a text simplification system with a pipeline of Deep Learning
+            models
           </li>
           <li>
             worked on a financial assistant chatbot in the Chair of Digital
@@ -79,8 +111,8 @@ const EducationCardList: FC<EducationCardListProps> = async ({
       content: (
         <ul className="list-disc list-inside">
           <li>
-            coordinated group projects in areas like Software Engineering,
-            Distributed Systems, Networking and ML
+            completed projects in areas like Software Engineering, Distributed
+            Systems, Networking and ML
           </li>
           <li>
             graduated with 17/20 average (Academic Merit Distinction), ECTS: A
@@ -94,7 +126,7 @@ const EducationCardList: FC<EducationCardListProps> = async ({
     <div className={cn("flex flex-col space-y-4", className)}>
       {experiences.map((exp, index) => {
         return (
-          <PositionCard
+          <EducationCard
             key={index}
             title={exp.title}
             company={exp.company}
@@ -109,4 +141,5 @@ const EducationCardList: FC<EducationCardListProps> = async ({
   );
 };
 
+export { EducationCard, EducationCardList };
 export default EducationCardList;

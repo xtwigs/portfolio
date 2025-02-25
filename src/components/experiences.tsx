@@ -1,8 +1,48 @@
-import PositionCard from "@/components/position-card";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FC } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import React from "react";
 
+// Experience Card Component
+interface ExperienceCardProps {
+  className?: string;
+  title: string;
+  company: string;
+  startDate: string;
+  endDate?: string;
+  location: string;
+  content: React.ReactNode;
+}
+
+const ExperienceCard: FC<ExperienceCardProps> = async ({
+  className,
+  ...props
+}) => {
+  return (
+    <Card className={className}>
+      <CardHeader>
+        <CardTitle className="text-lg font-semibold">{props.title}</CardTitle>
+        <CardDescription className="">
+          <span className="text-primary font-medium">{props.company}</span>
+          <span className="pl-2 text-muted-foreground">
+            {props.startDate}
+            {props.endDate ? ` - ${props.endDate}` : ""}, {props.location}
+          </span>
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="font-mono text-sm">{props.content}</CardContent>
+    </Card>
+  );
+};
+
+// Experience Card List Component
 interface ExperienceCardListProps
   extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -12,9 +52,9 @@ const ExperienceCardList: FC<ExperienceCardListProps> = async ({
 }) => {
   const experiences = [
     {
-      title: "research assistant",
+      title: "researcher",
       company: "Instituto de Telecomunicações - Sardine Lab",
-      startDate: "Jul 2024",
+      startDate: "Sep 2024",
       endDate: "Present",
       location: "Lisbon",
       content: (
@@ -53,9 +93,8 @@ const ExperienceCardList: FC<ExperienceCardListProps> = async ({
       content: (
         <ul className="list-disc list-inside">
           <li>
-            co-founded a startup intended to solve and automate enterprise
-            problems and tasks with modern AI technologies (Generative AI,
-            Computer Vision)
+            co-founded a startup to solve and automate enterprise problems and
+            tasks with modern AI technologies (Generative AI, Computer Vision)
           </li>
           <li>
             designed and built the company&apos;s business infrastructure,
@@ -103,7 +142,7 @@ const ExperienceCardList: FC<ExperienceCardListProps> = async ({
     <div className={cn("flex flex-col space-y-4", className)}>
       {experiences.map((exp, index) => {
         return (
-          <PositionCard
+          <ExperienceCard
             key={index}
             title={exp.title}
             company={exp.company}
