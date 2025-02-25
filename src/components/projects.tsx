@@ -24,9 +24,9 @@ const ProjectCard: FC<ProjectCardProps> = async ({ className, ...props }) => {
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle className="text-xl font-semibold">{props.title}</CardTitle>
+        <CardTitle className="">{props.title}</CardTitle>
         <CardDescription className="">
-          <span className="text-primary font-medium">{props.company}</span>
+          <span className="text-primary">{props.company}</span>
           <span className="pl-2 text-muted-foreground">
             {props.startDate}
             {props.endDate ? ` - ${props.endDate}` : ""}
@@ -57,7 +57,8 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
             lead developer of a Retrieval-Augmented Generation LLM{" "}
             <Link
               className="underline hover:text-accent duration-500"
-              href="https://politica-aberta.pt"
+              href="https://pa.pitorro.de"
+              target="_blank"
             >
               system
             </Link>
@@ -69,6 +70,7 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
             <Link
               className="underline hover:text-accent duration-500"
               href="https://github.com/politica-aberta"
+              target="_blank"
             >
               Github
             </Link>

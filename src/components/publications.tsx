@@ -14,6 +14,7 @@ interface PublicationCardProps {
   className?: string;
   title: string;
   authors: string;
+  date: string;
   link: string;
   venue: string;
 }
@@ -29,6 +30,7 @@ const PublicationCard: FC<PublicationCardProps> = async ({
           <CardTitle>{props.title}</CardTitle>
           <CardDescription className="">
             <span className="text-primary ">{props.authors}</span>
+            <span className="pl-2 text-muted-foreground">{props.date}</span>
           </CardDescription>
         </CardHeader>
         <CardContent className="font-mono">{props.venue}</CardContent>
@@ -50,6 +52,7 @@ const PublicationCardList: FC<PublicationCardListProps> = async ({
       title:
         "LaTIM: Measuring Latent Token-to-Token Interactions in Mamba Models",
       authors: "Hugo Pitorro, Marcos Treviso",
+      date: "Feb 2025",
       link: "https://arxiv.org/abs/2502.15612",
       venue: "arXiv preprint",
     },
@@ -57,6 +60,7 @@ const PublicationCardList: FC<PublicationCardListProps> = async ({
       title: "How Effective are State Space Models for Machine Translation?",
       authors:
         "Hugo Pitorro, Pavlo Vasylenko, Marcos Treviso, André F. T. Martins",
+      date: "Nov 2024",
       link: "https://aclanthology.org/2024.wmt-1.111/",
       venue: "WMT 2024",
     },
@@ -70,6 +74,7 @@ const PublicationCardList: FC<PublicationCardListProps> = async ({
             key={index}
             title={pub.title}
             authors={pub.authors}
+            date={pub.date}
             link={pub.link}
             venue={pub.venue}
           />

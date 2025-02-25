@@ -63,7 +63,7 @@ const EducationCardList: FC<EducationCardListProps> = async ({
           </li>
           <li>
             attended lectures, labs and keynotes from selected speakers,
-            distinguished professors and renowned researchers
+            distinguished professors and researchers
           </li>
         </ul>
       ),

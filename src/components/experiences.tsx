@@ -28,16 +28,16 @@ const ExperienceCard: FC<ExperienceCardProps> = async ({
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle className="text-lg font-semibold">{props.title}</CardTitle>
+        <CardTitle className="">{props.title}</CardTitle>
         <CardDescription className="">
-          <span className="text-primary font-medium">{props.company}</span>
+          <span className="text-primary">{props.company}</span>
           <span className="pl-2 text-muted-foreground">
             {props.startDate}
             {props.endDate ? ` - ${props.endDate}` : ""}, {props.location}
           </span>
         </CardDescription>
       </CardHeader>
-      <CardContent className="font-mono text-sm">{props.content}</CardContent>
+      <CardContent className="font-mono">{props.content}</CardContent>
     </Card>
   );
 };
@@ -93,8 +93,8 @@ const ExperienceCardList: FC<ExperienceCardListProps> = async ({
       content: (
         <ul className="list-disc list-inside">
           <li>
-            co-founded a startup to solve and automate enterprise problems and
-            tasks with modern AI technologies (Generative AI, Computer Vision)
+            co-founded a startup to solve and automate enterprise problems with
+            modern AI technologies (genAI, computer vision)
           </li>
           <li>
             designed and built the company&apos;s business infrastructure,
@@ -111,6 +111,10 @@ const ExperienceCardList: FC<ExperienceCardListProps> = async ({
       location: "Munich",
       content: (
         <ul className="list-disc list-inside">
+          <li>
+            led a project evaluating different sparse models in abstractive
+            summarization.
+          </li>
           <li>
             developed a framework for fine-tuning/evaluating various DL models
             in different NLP downstream tasks
