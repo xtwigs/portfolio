@@ -39,7 +39,7 @@ const ProjectCard: FC<ProjectCardProps> = async ({ className, ...props }) => {
 };
 
 // Project Card List Component
-interface ProjectCardListProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface ProjectCardListProps extends React.HTMLAttributes<HTMLDivElement> { }
 
 const ProjectCardList: FC<ProjectCardListProps> = async ({
   className,
@@ -54,7 +54,7 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
       content: (
         <ul className="list-disc list-inside">
           <li>
-            lead developer of a Retrieval-Augmented Generation LLM{" "}
+            lead developer of a retrieval-augmented LLM{" "}
             <Link
               className="underline hover:text-accent duration-500"
               href="https://pa.pitorro.de"
@@ -62,8 +62,8 @@ const ProjectCardList: FC<ProjectCardListProps> = async ({
             >
               system
             </Link>
-            , the open-source project intends to simplify access to the
-            political parties&apos; election promises and manifests
+            , the open-source project intends to simplify access to the lengthy
+            political parties&apos; election promises and manifestos
           </li>
           <li>
             built the system using React, Flask and the OpenAI API{" "}

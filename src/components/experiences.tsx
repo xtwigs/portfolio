@@ -94,11 +94,11 @@ const ExperienceCardList: FC<ExperienceCardListProps> = async ({
         <ul className="list-disc list-inside">
           <li>
             co-founded a startup to solve and automate enterprise problems with
-            modern AI technologies (genAI, computer vision)
+            modern AI technologies (LLMs, diffusion, computer vision, etc...)
           </li>
           <li>
             designed and built the company&apos;s business infrastructure,
-            deployed using AWS.
+            deployed using AWS
           </li>
         </ul>
       ),
@@ -112,8 +112,8 @@ const ExperienceCardList: FC<ExperienceCardListProps> = async ({
       content: (
         <ul className="list-disc list-inside">
           <li>
-            led a project evaluating different sparse models in abstractive
-            summarization.
+            led a project for evaluating different sparse models in abstractive
+            summarization
           </li>
           <li>
             developed a framework for fine-tuning/evaluating various DL models

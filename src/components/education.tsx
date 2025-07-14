@@ -50,25 +50,6 @@ const EducationCardList: FC<EducationCardListProps> = async ({
 }) => {
   const experiences = [
     {
-      title: "lisbon machine learning school",
-      company: "Instituto Superior Técnico",
-      startDate: "Jul 2023",
-      endDate: "",
-      location: "Lisbon",
-      content: (
-        <ul className="list-disc list-inside">
-          <li>
-            week-long school covering everything from fundamental Machine
-            Learning, transformers, multimodality and causality
-          </li>
-          <li>
-            attended lectures, labs and keynotes from selected speakers,
-            distinguished professors and researchers
-          </li>
-        </ul>
-      ),
-    },
-    {
       title: "master in Informatics",
       company: "Technical University of Munich",
       startDate: "Oct 2021",
@@ -99,6 +80,24 @@ const EducationCardList: FC<EducationCardListProps> = async ({
             Finance
           </li>
           <li>graduated with an average of 1.8/5, merit, ECTS: A</li>
+        </ul>
+      ),
+    }, {
+      title: "lisbon machine learning school",
+      company: "Instituto Superior Técnico",
+      startDate: "Jul 2023",
+      endDate: "",
+      location: "Lisbon",
+      content: (
+        <ul className="list-disc list-inside">
+          <li>
+            week-long school covering everything from fundamental Machine
+            Learning, transformers, multimodality and causality
+          </li>
+          <li>
+            attended lectures, labs and keynotes from selected speakers,
+            distinguished professors and researchers
+          </li>
         </ul>
       ),
     },
