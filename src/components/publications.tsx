@@ -54,7 +54,7 @@ const PublicationCardList: FC<PublicationCardListProps> = async ({
       authors: "Hugo Pitorro, Marcos Treviso",
       date: "Feb 2025",
       link: "https://arxiv.org/abs/2502.15612",
-      venue: "ACL 2025 (oral)",
+      venue: "ACL 2025 (outstanding paper award)",
     },
     {
       title: "How Effective are State Space Models for Machine Translation?",
