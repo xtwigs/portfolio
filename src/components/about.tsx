@@ -39,7 +39,7 @@ const About: FC<AboutProps> = async ({ className, ...props }) => {
         </CardHeader>
         <CardContent>
           <h2 className="font-mono">
-            i&apos;m a machine learning researcher at the Instituto de
+            machine learning research at Instituto de
             Telecomunicações in Lisbon
           </h2>
         </CardContent>

@@ -78,7 +78,7 @@ const ExperienceCardList: FC<ExperienceCardListProps> = async ({
               href="https://mtreviso.github.io/"
               target="_blank"
             >
-              Dr. Marcos Treviso
+              Prof. Marcos Treviso
             </Link>
           </li>
         </ul>

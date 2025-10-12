@@ -49,6 +49,14 @@ const PublicationCardList: FC<PublicationCardListProps> = async ({
 }) => {
   const publications = [
     {
+      title: "Long-Context Generalization with Sparse Attention",
+      authors:
+        "Pavlo Vasylenko, Hugo Pitorro, Marcos Treviso, André F. T. Martins",
+      date: "Sep 2025",
+      link: "https://arxiv.org/abs/2506.16640",
+      venue: "arxiv",
+    },
+    {
       title:
         "LaTIM: Measuring Latent Token-to-Token Interactions in Mamba Models",
       authors: "Hugo Pitorro, Marcos Treviso",
