@@ -50,6 +50,20 @@ const EducationCardList: FC<EducationCardListProps> = async ({
 }) => {
   const experiences = [
     {
+      title: "phd in Computer Science",
+      company: "Instituto Superior Técnico",
+      startDate: "Jan 2026",
+      endDate: "Present",
+      location: "Lisbon",
+      content: (
+        <ul className="list-disc list-inside">
+          <li>integrated phd as part of the work with Sword Health</li>
+        </ul>
+      ),
+    },
+
+
+    {
       title: "master in Informatics",
       company: "Technical University of Munich",
       startDate: "Oct 2021",

@@ -50,12 +50,43 @@ const ExperienceCardList: FC<ExperienceCardListProps> = async ({
   className,
   ...props
 }) => {
-  const experiences = [
+  const experiences = [    {
+    title: "research scientist (phd)",
+    company: "Sword Health",
+    startDate: "Jan 2026",
+    endDate: "Present",
+    location: "Lisbon",
+    content: (
+      <ul className="list-disc list-inside">
+        <li>
+          working on memory and long-context problems in LLMs
+        </li>
+        <li>
+          advised by{" "}
+          <Link
+            className="underline hover:text-accent duration-500"
+            href="https://mtreviso.github.io/"
+            target="_blank"
+          >
+            Prof. Marcos Treviso
+          </Link>
+          and{" "}
+          <Link
+            className="underline hover:text-accent duration-500"
+            href="https://scholar.google.com/citations?hl=en&user=jf4S4tsAAAAJ"
+            target="_blank"
+          >
+            Ricardo Rei
+          </Link>
+        </li>
+      </ul>
+    ),
+  },
     {
       title: "researcher",
       company: "Instituto de Telecomunicações - Sardine Lab",
       startDate: "Sep 2024",
-      endDate: "Present",
+      endDate: "Dec 2025",
       location: "Lisbon",
       content: (
         <ul className="list-disc list-inside">
