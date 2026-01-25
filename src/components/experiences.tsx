@@ -70,7 +70,7 @@ const ExperienceCardList: FC<ExperienceCardListProps> = async ({
           >
             Prof. Marcos Treviso
           </Link>
-          and{" "}
+          {" "}and{" "}
           <Link
             className="underline hover:text-accent duration-500"
             href="https://scholar.google.com/citations?hl=en&user=jf4S4tsAAAAJ"
