@@ -54,7 +54,7 @@ const PublicationCardList: FC<PublicationCardListProps> = async ({
         "Pavlo Vasylenko, Hugo Pitorro, Marcos Treviso, André F. T. Martins",
       date: "Sep 2025",
       link: "https://arxiv.org/abs/2506.16640",
-      venue: "arxiv",
+      venue: "ICLR 2026",
     },
     {
       title:
